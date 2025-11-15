@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="subscription-card" id="subscription-card">
+        <img src="assets/philip-oroni-7rMD7zh5SKo-unsplash.jpg" alt="Email Icon" class="card-icon">
+        <h2>Subscribe to our Newsletter</h2>
+        <p class="subtitle">Join thousands getting emails in their inbox.</p>
+        
+        <form id="subscription-form" novalidate>
+            <input 
+                type="email" 
+                id="email-input" 
+                placeholder="email@example.com"
+                aria-label="Email Address"
+                required
+            >
+            <p id="error-message" class="error-message">
+                Please enter the valid email
+            </p>
+            <button type="submit" id="subscribe-btn">Subscribe</button>
+        </form>
+    </div>
+
+    <dialog id="success-dialog">
+        <img src="assets/Icon.png" alt="Success" class="success-icon">
+        <p>
+            <strong> Your subscription has been placed <br> for <span id="user-email"></span></strong>!
+        </p>
+        <button id="close-dialog-btn">Thanks!</button>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
