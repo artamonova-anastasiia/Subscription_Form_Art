@@ -9,26 +9,32 @@ body {
     margin: 0;
 }
 
-/* Картка Підписки */
 .subscription-card {
-    background-color: #ffffff;
-    border-radius: 24px;
-    padding: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 90%;
+    background: white;
+    border-radius: 20px;
+    padding: 0 24px 24px 24px; /* no padding-top since image covers top area */
     text-align: center;
+    width: 500px;
+    margin: auto;
+    box-shadow: 22px 22px 30px rgba(0, 0, 0, 0.22);
 }
 
-.card-icon 
-{
-    width: 300px;
-    height: 200px;
-    margin-bottom: 15px; /* Уменьшен отступ снизу */
-    border-radius: 12px; /* Закругление углов изображения */
-    display: block; /* Чтобы убрать возможное пустое место под картинкой */
-    margin-left: auto; /* Центрирование */
-    margin-right: auto;
+
+.card-image-wrapper {
+    height: 210px;           /* adjust until it matches your mockup */
+    overflow: hidden;        /* hides top & bottom */
+    border-radius: 16px;     /* rounded corners like the mockup */
+    margin-top: 24px;        /* spacing from top of card */
+    margin-bottom: 24px;     /* spacing between image and title */
+}
+
+.card-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* <-- THIS crops the image */
+    display: block;
+    /*transform: scale();     /* <-- zoom by 1.3x */
+    transform-origin: center;  /* <-- keeps zoom centered */
 }
 
 h2 {
@@ -64,15 +70,15 @@ h2 {
 #email-input.invalid {
     border-color: #d9534f;
     background-color: #fcf2f2;
-    color: #d9534f;
+    color: rgb(243,182,160);
 }
 
 /* Повідомлення про помилку */
 .error-message {
     font-size: 14px;
-    color: #d9534f; /* Червоний колір з дизайну */
+    color: #df9693; /* Червоний колір з дизайну */
     margin: 0 0 12px;
-    text-align: left;
+    text-align: center;
     display: none; /* Приховано за замовчуванням */
 }
 
@@ -84,11 +90,14 @@ h2 {
 #subscribe-btn {
     background-color: #222;
     color: #ffffff;
+    
     font-size: 16px;
     font-weight: 600;
     border: none;
     padding: 14px;
     border-radius: 8px;
+    width : 30%;
+    align-self: center;
     cursor: pointer;
     transition: background-color 0.2s;
 }
